@@ -11,7 +11,7 @@ import {
 
 import { fetchTimeline } from "../store/actions";
 import { useSelector, useDispatch } from "react-redux";
-import { Segment } from "semantic-ui-react";
+import { Segment, Placeholder } from "semantic-ui-react";
 
 const Timeline = () => {
   const dispatch = useDispatch();
@@ -22,7 +22,28 @@ const Timeline = () => {
     if (timeline === null) dispatch(fetchTimeline());
   }, [dispatch, timeline]);
 
-  if (!timeline) return null;
+  if (!timeline)
+    return (
+      <Segment inverted={dark}>
+        <Placeholder inverted={dark}>
+          <Placeholder.Paragraph>
+            <Placeholder.Line />
+            <Placeholder.Line />
+            <Placeholder.Line />
+          </Placeholder.Paragraph>
+          <Placeholder.Paragraph>
+            <Placeholder.Line />
+            <Placeholder.Line />
+            <Placeholder.Line />
+          </Placeholder.Paragraph>
+          <Placeholder.Paragraph>
+            <Placeholder.Line />
+            <Placeholder.Line />
+            <Placeholder.Line />
+          </Placeholder.Paragraph>
+        </Placeholder>
+      </Segment>
+    );
 
   return (
     <Segment inverted={dark} style={{ width: "100%", height: 308 }}>
@@ -30,10 +51,8 @@ const Timeline = () => {
         <LineChart
           data={[...timeline.filter((tl) => tl.totalCases > 0)]}
           margin={{
-            top: 5,
-            right: 30,
-            left: 0,
-            bottom: 5,
+            left: -8,
+            right: 8,
           }}
         >
           <XAxis dataKey="date" />

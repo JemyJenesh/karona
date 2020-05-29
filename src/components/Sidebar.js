@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Menu, Sidebar as Nav, Checkbox } from "semantic-ui-react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-scroll";
 
 const Sidebar = ({ visible, setVisible }) => {
   const dispatch = useDispatch();
@@ -22,20 +22,33 @@ const Sidebar = ({ visible, setVisible }) => {
       <Menu.Item style={{ textAlign: "center", fontSize: 24, padding: 16 }}>
         Karona
       </Menu.Item>
-      <Menu.Item as={NavLink} to="/" exact>
+      <Menu.Item
+        activeClass="active item"
+        as={Link}
+        to="home"
+        spy={true}
+        offset={-100}
+        smooth={true}
+        duration={500}
+      >
         Home
       </Menu.Item>
-      <Menu.Item as={NavLink} to="/hospitals">
-        Hospitals
+      <Menu.Item
+        activeClass="active item"
+        as={Link}
+        to="news"
+        spy={true}
+        offset={-70}
+        smooth={true}
+        duration={500}
+      >
+        News
       </Menu.Item>
-      <Menu.Item as={NavLink} to="/questions">
+      <Menu.Item as={Link} to="/questions">
         Questions
       </Menu.Item>
-      <Menu.Item as={NavLink} to="/myths">
+      <Menu.Item as={Link} to="/myths">
         Myths
-      </Menu.Item>
-      <Menu.Item as={NavLink} to="/data">
-        World data
       </Menu.Item>
       <Menu.Item style={{ display: "flex", alignItems: "center" }}>
         <Checkbox

@@ -16,14 +16,15 @@ const App = () => {
         inverted={dark}
         style={{
           minHeight: "100vh",
-          borderRadius: 0,
-          paddingRight: 0,
+          paddingTop: "6rem",
           paddingLeft: 0,
+          paddingRight: 0,
+          borderRadius: 0,
         }}
       >
         <Sidebar visible={visible} setVisible={setVisible} />
         <Navbar visible={visible} setVisible={setVisible} />
-        <Container style={{ marginTop: "5rem" }}>
+        <Container>
           <Switch>
             <Route path="/" exact component={Home} />
           </Switch>

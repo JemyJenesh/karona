@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-scroll";
 
 import {
   Menu,
@@ -36,20 +37,33 @@ const Navbar = ({ visible, setVisible }) => {
           Karona
         </Menu.Item>
         <Responsive as={Fragment} minWidth={768}>
-          <Menu.Item as={NavLink} to="/" exact>
+          <Menu.Item
+            activeClass="active item"
+            as={Link}
+            to="home"
+            spy={true}
+            offset={-100}
+            smooth={true}
+            duration={500}
+          >
             Home
           </Menu.Item>
-          <Menu.Item as={NavLink} to="/hospitals">
-            Hospitals
+          <Menu.Item
+            activeClass="active item"
+            as={Link}
+            to="news"
+            spy={true}
+            offset={-70}
+            smooth={true}
+            duration={500}
+          >
+            News
           </Menu.Item>
-          <Menu.Item as={NavLink} to="/questions">
+          <Menu.Item as={Link} to="/questions">
             Questions
           </Menu.Item>
-          <Menu.Item as={NavLink} to="/myths">
+          <Menu.Item as={Link} to="/myths">
             Myths
-          </Menu.Item>
-          <Menu.Item as={NavLink} to="/data">
-            World data
           </Menu.Item>
           <Popup
             inverted={dark}
