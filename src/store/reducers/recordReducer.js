@@ -8,7 +8,6 @@ const recordReducer = (state = initialState, action) => {
     case "FETCH_NEPAL_DATA":
       return { ...state, nepal: action.payload };
     case "FETCH_TIMELINE":
-      console.log(action.payload);
       return { ...state, timeline: action.payload };
     default:
       return state;
