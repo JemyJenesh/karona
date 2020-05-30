@@ -44,12 +44,6 @@ const Sidebar = ({ visible, setVisible }) => {
       >
         News
       </Menu.Item>
-      <Menu.Item as={Link} to="/questions">
-        Questions
-      </Menu.Item>
-      <Menu.Item as={Link} to="/myths">
-        Myths
-      </Menu.Item>
       <Menu.Item style={{ display: "flex", alignItems: "center" }}>
         <Checkbox
           toggle

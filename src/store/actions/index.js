@@ -22,7 +22,6 @@ export const fetchTimeline = () => async (dispatch) => {
 };
 
 export const fetchNews = () => async (dispatch) => {
-  console.log("asdfasfd");
   const response = await axios.get(
     "https://nepalcorona.info/api/v1/news?limit=20"
   );

@@ -10,7 +10,6 @@ import {
   Icon,
   Popup,
 } from "semantic-ui-react";
-import { NavLink } from "react-router-dom";
 
 const Navbar = ({ visible, setVisible }) => {
   const dispatch = useDispatch();
@@ -58,12 +57,6 @@ const Navbar = ({ visible, setVisible }) => {
             duration={500}
           >
             News
-          </Menu.Item>
-          <Menu.Item as={Link} to="/questions">
-            Questions
-          </Menu.Item>
-          <Menu.Item as={Link} to="/myths">
-            Myths
           </Menu.Item>
           <Popup
             inverted={dark}
